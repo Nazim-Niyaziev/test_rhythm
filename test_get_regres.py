@@ -18,6 +18,10 @@ def test_golden_path():
     assert isinstance(result, dict)
     # тело ответа содержит требуемые ключи значений
     assert set(result.keys()) == {'data', 'total_pages', 'support', 'per_page', 'page', 'total'}
+    # в теле ответа содержатся ссылки на изображения пользователей
+    for user in result['data']:
+        assert 'avatar' in user, f"У пользователя {user['id']} отсутствует аватар."
+        assert user['avatar'].startswith('https://'), f"У пользователя {user['id']} остутствует URL его аватара."
 
 
 def test_one_user_per_page():
