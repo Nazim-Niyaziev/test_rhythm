@@ -2,7 +2,7 @@ import json
 import requests
 
 
-class Regres:
+class Reqres:
 
     def __init__(self):
         self.base_url = "https://reqres.in/"
