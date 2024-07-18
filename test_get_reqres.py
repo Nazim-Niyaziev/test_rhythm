@@ -1,7 +1,7 @@
-from api import Regres
+from api import Reqres
 
 
-get_users = Regres()
+get_users = Reqres()
 
 
 def test_golden_path():
